@@ -1,15 +1,233 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-	<head>
-		<link rel="stylesheet" href=".css">
-	</head>
-	<header>
 
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+	<link href="style.css" rel="stylesheet" type="text/css">
+
+	<title>Kenton County Animal Shelter</title>
+</head>
+
+<body>
+	<header>
+		<br>
+		<h1 class="text-center">Adoptable Animals</h1>
+		<h4 class="text-center text-muted">Alphabetical by name</h4>
 	</header>
-	<body>
-		
-	</body>
-	<footer>
-		
-	</footer>
+	<!-- 
+	Name
+	Sex - Age
+	Breed
+	Spayed / Neutered
+	ID
+	-->
+	<main>
+		<div id="container" class="container animals">
+		</div>
+	</main>
+
+	<!-- Optional JavaScript; choose one of the two! -->
+
+	<!-- Option 1: Bootstrap Bundle with Popper -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+		crossorigin="anonymous"></script>
+
+	<!-- Option 2: Separate Popper and Bootstrap JS -->
+	<!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+	<script>
+
+		/*
+		Name:
+		Species:
+		Breed:
+		Second:
+		Sex:
+		Color:
+		Declaw:
+		SpayNeut:
+		Age:
+		Health:
+		Vacc:
+		Worm:
+		Chipped:
+		ID:
+		ChipID:
+		Suitability: [],
+		Foster:
+		*/
+
+		let animals = [
+			{
+				Name: 'Benny',
+				Picture: "img/Benny.jpg",
+				Species: 'Dog',
+				Breed: 'Australian Shepherd Cross',
+				Sex: 'Male',
+				Color: 'Brown / White',
+				Declaw: false,
+				SpayNeut: true,
+				Age: '2Yrs 1Mths 4Wks (approx)',
+				Health: true,
+				Vacc: true,
+				Worm: true,
+				Chipped: true,
+				ID: 23531,
+				ChipID: 985113005872810,
+				Suitability: ['Not Suitable for Children'],
+				About: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nulla augue, accumsan id maximus eget, rhoncus at urna. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin venenatis pharetra dapibus. Suspendisse imperdiet urna at quam aliquet pretium. Morbi ut orci elit. Morbi a dignissim dui. Sed eget hendrerit odio. Fusce dignissim lacinia risus vel tempus. Phasellus pretium nulla metus, quis vestibulum enim ultrices id. Sed ut enim at lectus mattis sagittis. Nullam ullamcorper erat non sagittis ultricies. Vivamus rhoncus tellus vel est tincidunt, in vehicula augue cursus. Praesent laoreet, nisl vel lobortis aliquam, leo eros cursus nisl, sit amet scelerisque lectus elit sodales magna. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin semper varius nisl, quis sollicitudin urna dignissim ac. Duis mollis nunc mi, eu tristique diam ullamcorper a. Vivamus fringilla, sem sed feugiat ullamcorper, sem dui consequat quam, ut porttitor velit risus vitae felis. Suspendisse lobortis tincidunt ligula ut commodo. Proin pharetra ligula nec malesuada laoreet. Integer elementum sapien ac neque scelerisque dictum. Aliquam sapien enim, pretium non massa sed, elementum egestas magna. Mauris vehicula accumsan ante sed scelerisque. Maecenas tempus ullamcorper sodales. Aliquam aliquet nulla ac lacus lobortis facilisis. Suspendisse felis ligula, iaculis non laoreet at, finibus id odio. Integer varius eros ac porta tincidunt. Etiam consectetur augue odio, ut laoreet nibh rutrum vitae. Duis accumsan pellentesque molestie. Pellentesque a purus at nisi laoreet tincidunt.',
+				Foster: false,
+			},
+			{
+				Name: 'Cornelia',
+				Picture: "img/Cornelia.jpg",
+				Species: 'Dog',
+				Breed: 'Boxer Cross',
+				Sex: 'Female',
+				Color: 'White',
+				Declaw: false,
+				SpayNeut: true,
+				Age: '6Yrs 2Mths 3Wks (approx)',
+				Health: true,
+				Vacc: true,
+				Worm: true,
+				Chipped: true,
+				ID: 23390,
+				ChipID: 985113005872687,
+				Suitability: ['OK with Dogs', 'Laid Back', 'Shy'],
+				About: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nulla augue, accumsan id maximus eget, rhoncus at urna. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin venenatis pharetra dapibus. Suspendisse imperdiet urna at quam aliquet pretium. Morbi ut orci elit. Morbi a dignissim dui. Sed eget hendrerit odio. Fusce dignissim lacinia risus vel tempus. Phasellus pretium nulla metus, quis vestibulum enim ultrices id. Sed ut enim at lectus mattis sagittis. Nullam ullamcorper erat non sagittis ultricies. Vivamus rhoncus tellus vel est tincidunt, in vehicula augue cursus. Praesent laoreet, nisl vel lobortis aliquam, leo eros cursus nisl, sit amet scelerisque lectus elit sodales magna. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin semper varius nisl, quis sollicitudin urna dignissim ac. Duis mollis nunc mi, eu tristique diam ullamcorper a. Vivamus fringilla, sem sed feugiat ullamcorper, sem dui consequat quam, ut porttitor velit risus vitae felis. Suspendisse lobortis tincidunt ligula ut commodo. Proin pharetra ligula nec malesuada laoreet. Integer elementum sapien ac neque scelerisque dictum. Aliquam sapien enim, pretium non massa sed, elementum egestas magna. Mauris vehicula accumsan ante sed scelerisque. Maecenas tempus ullamcorper sodales. Aliquam aliquet nulla ac lacus lobortis facilisis. Suspendisse felis ligula, iaculis non laoreet at, finibus id odio. Integer varius eros ac porta tincidunt. Etiam consectetur augue odio, ut laoreet nibh rutrum vitae. Duis accumsan pellentesque molestie. Pellentesque a purus at nisi laoreet tincidunt.',
+				Foster: false,
+			},
+			{
+				Name: 'Hemingway',
+				Picture: "img/Hemingway.jpg",
+				Species: 'Cat',
+				Breed: 'Domestic Shorthair Cross',
+				Sex: 'Male',
+				Color: 'Grey',
+				Declaw: false,
+				SpayNeut: true,
+				Age: '3Yrs 3Wks (approx)',
+				Health: true,
+				Vacc: true,
+				Worm: true,
+				Chipped: false,
+				ID: 23897,
+				ChipID: 0,
+				Suitability: ['Doesn\'t Like Cats', 'Special Needs'],
+				About: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nulla augue, accumsan id maximus eget, rhoncus at urna. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin venenatis pharetra dapibus. Suspendisse imperdiet urna at quam aliquet pretium. Morbi ut orci elit. Morbi a dignissim dui. Sed eget hendrerit odio. Fusce dignissim lacinia risus vel tempus. Phasellus pretium nulla metus, quis vestibulum enim ultrices id. Sed ut enim at lectus mattis sagittis. Nullam ullamcorper erat non sagittis ultricies. Vivamus rhoncus tellus vel est tincidunt, in vehicula augue cursus. Praesent laoreet, nisl vel lobortis aliquam, leo eros cursus nisl, sit amet scelerisque lectus elit sodales magna. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin semper varius nisl, quis sollicitudin urna dignissim ac. Duis mollis nunc mi, eu tristique diam ullamcorper a. Vivamus fringilla, sem sed feugiat ullamcorper, sem dui consequat quam, ut porttitor velit risus vitae felis. Suspendisse lobortis tincidunt ligula ut commodo. Proin pharetra ligula nec malesuada laoreet. Integer elementum sapien ac neque scelerisque dictum. Aliquam sapien enim, pretium non massa sed, elementum egestas magna. Mauris vehicula accumsan ante sed scelerisque. Maecenas tempus ullamcorper sodales. Aliquam aliquet nulla ac lacus lobortis facilisis. Suspendisse felis ligula, iaculis non laoreet at, finibus id odio. Integer varius eros ac porta tincidunt. Etiam consectetur augue odio, ut laoreet nibh rutrum vitae. Duis accumsan pellentesque molestie. Pellentesque a purus at nisi laoreet tincidunt.',
+				Foster: false,
+			},
+			{
+				Name: 'Howard',
+				Picture: "img/Howard.jpg",
+				Species: 'Cat',
+				Breed: 'Domestic Shorthair Cross',
+				Second: 'Russian',
+				Sex: 'Male',
+				Color: 'Grey',
+				Declaw: false,
+				SpayNeut: true,
+				Age: 'Adult',
+				Health: true,
+				Vacc: true,
+				Worm: true,
+				Chipped: true,
+				ID: 23882,
+				ChipID: 985113006299853,
+				Suitability: [],
+				About: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nulla augue, accumsan id maximus eget, rhoncus at urna. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin venenatis pharetra dapibus. Suspendisse imperdiet urna at quam aliquet pretium. Morbi ut orci elit. Morbi a dignissim dui. Sed eget hendrerit odio. Fusce dignissim lacinia risus vel tempus. Phasellus pretium nulla metus, quis vestibulum enim ultrices id. Sed ut enim at lectus mattis sagittis. Nullam ullamcorper erat non sagittis ultricies. Vivamus rhoncus tellus vel est tincidunt, in vehicula augue cursus. Praesent laoreet, nisl vel lobortis aliquam, leo eros cursus nisl, sit amet scelerisque lectus elit sodales magna. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin semper varius nisl, quis sollicitudin urna dignissim ac. Duis mollis nunc mi, eu tristique diam ullamcorper a. Vivamus fringilla, sem sed feugiat ullamcorper, sem dui consequat quam, ut porttitor velit risus vitae felis. Suspendisse lobortis tincidunt ligula ut commodo. Proin pharetra ligula nec malesuada laoreet. Integer elementum sapien ac neque scelerisque dictum. Aliquam sapien enim, pretium non massa sed, elementum egestas magna. Mauris vehicula accumsan ante sed scelerisque. Maecenas tempus ullamcorper sodales. Aliquam aliquet nulla ac lacus lobortis facilisis. Suspendisse felis ligula, iaculis non laoreet at, finibus id odio. Integer varius eros ac porta tincidunt. Etiam consectetur augue odio, ut laoreet nibh rutrum vitae. Duis accumsan pellentesque molestie. Pellentesque a purus at nisi laoreet tincidunt.',
+				Foster: false,
+			},
+			{
+				Name: 'Niko',
+				Picture: "img/Niko.webp",
+				Species: 'Cat',
+				Breed: 'Domestic Longhair Cross',
+				Sex: 'Male',
+				Color: 'Grey Tabby / White',
+				Declaw: false,
+				SpayNeut: true,
+				Age: '3Mths 3Wks',
+				Health: true,
+				Vacc: true,
+				Worm: true,
+				Chipped: true,
+				ID: 23541,
+				ChipID: 985113006299812,
+				Suitability: [],
+				About: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nulla augue, accumsan id maximus eget, rhoncus at urna. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin venenatis pharetra dapibus. Suspendisse imperdiet urna at quam aliquet pretium. Morbi ut orci elit. Morbi a dignissim dui. Sed eget hendrerit odio. Fusce dignissim lacinia risus vel tempus. Phasellus pretium nulla metus, quis vestibulum enim ultrices id. Sed ut enim at lectus mattis sagittis. Nullam ullamcorper erat non sagittis ultricies. Vivamus rhoncus tellus vel est tincidunt, in vehicula augue cursus. Praesent laoreet, nisl vel lobortis aliquam, leo eros cursus nisl, sit amet scelerisque lectus elit sodales magna. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin semper varius nisl, quis sollicitudin urna dignissim ac. Duis mollis nunc mi, eu tristique diam ullamcorper a. Vivamus fringilla, sem sed feugiat ullamcorper, sem dui consequat quam, ut porttitor velit risus vitae felis. Suspendisse lobortis tincidunt ligula ut commodo. Proin pharetra ligula nec malesuada laoreet. Integer elementum sapien ac neque scelerisque dictum. Aliquam sapien enim, pretium non massa sed, elementum egestas magna. Mauris vehicula accumsan ante sed scelerisque. Maecenas tempus ullamcorper sodales. Aliquam aliquet nulla ac lacus lobortis facilisis. Suspendisse felis ligula, iaculis non laoreet at, finibus id odio. Integer varius eros ac porta tincidunt. Etiam consectetur augue odio, ut laoreet nibh rutrum vitae. Duis accumsan pellentesque molestie. Pellentesque a purus at nisi laoreet tincidunt.',
+				Foster: true,
+			},
+			{
+				Name: 'Wishbone',
+				Picture: "img/Wishbone.jpg",
+				Species: 'Dog',
+				Breed: 'American Bulldog Cross',
+				Sex: 'Male',
+				Color: 'Black',
+				SpayNeut: true,
+				Age: '2Yrs 1Mths 2Wks (approx)',
+				Size: 'Large',
+				Health: true,
+				Vacc: true,
+				Worm: true,
+				Chipped: true,
+				ID: 20579,
+				ChipID: 985113004709947,
+				Suitability: [],
+				About: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nulla augue, accumsan id maximus eget, rhoncus at urna. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin venenatis pharetra dapibus. Suspendisse imperdiet urna at quam aliquet pretium. Morbi ut orci elit. Morbi a dignissim dui. Sed eget hendrerit odio. Fusce dignissim lacinia risus vel tempus. Phasellus pretium nulla metus, quis vestibulum enim ultrices id. Sed ut enim at lectus mattis sagittis. Nullam ullamcorper erat non sagittis ultricies. Vivamus rhoncus tellus vel est tincidunt, in vehicula augue cursus. Praesent laoreet, nisl vel lobortis aliquam, leo eros cursus nisl, sit amet scelerisque lectus elit sodales magna. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin semper varius nisl, quis sollicitudin urna dignissim ac. Duis mollis nunc mi, eu tristique diam ullamcorper a. Vivamus fringilla, sem sed feugiat ullamcorper, sem dui consequat quam, ut porttitor velit risus vitae felis. Suspendisse lobortis tincidunt ligula ut commodo. Proin pharetra ligula nec malesuada laoreet. Integer elementum sapien ac neque scelerisque dictum. Aliquam sapien enim, pretium non massa sed, elementum egestas magna. Mauris vehicula accumsan ante sed scelerisque. Maecenas tempus ullamcorper sodales. Aliquam aliquet nulla ac lacus lobortis facilisis. Suspendisse felis ligula, iaculis non laoreet at, finibus id odio. Integer varius eros ac porta tincidunt. Etiam consectetur augue odio, ut laoreet nibh rutrum vitae. Duis accumsan pellentesque molestie. Pellentesque a purus at nisi laoreet tincidunt.',
+				Foster: false,
+			}
+		]
+		/*
+	Name
+	Sex - Age
+	Breed
+	Spayed / Neutered
+	ID
+	*/
+		var container = document.getElementById("container");
+		for (var i = 0; i < animals.length; i++) {
+
+			container.innerHTML += (
+				`
+				<span class="col-lg-6">
+					<span class="animals-div">
+						<span class="col-lg-5">
+							<img src="${animals[i].Picture}" alt="${animals[i].Name}'s picture"
+								class="img-thumbnail img-fluid rounded float-left img-responsive">
+						</span>
+						<span class="col-lg-7">
+							<span class="animals-info">
+								<h2>Name: <a href="detail.html?index=${i}">${animals[i].Name}</a></h2>
+								<p>Species: ${animals[i].Species}</p>
+								<p>Breed: ${animals[i].Breed}</p>
+								<p>Sex: ${animals[i].Sex}</p>
+								<p>Age: ${animals[i].Age}</p>
+								<p>Animal ID: ${animals[i].ID}</p>
+								<p>` + (animals[i].SpayNeut == true ? (animals[i].Sex == "Male" ? "Neutered" : "Spayed") :
+					(animals[i].Sex == "Male" ? "Not Neutered" : "Not Spayed")) + `</p>
+								<p><a href="detail.html?index=${i}">View Details</a></p>
+							</span>
+						</span>
+					</span>
+				</span>
+				`
+			)
+
+		};
+	</script>
+</body>
+
 </html>

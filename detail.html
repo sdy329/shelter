@@ -1,107 +1,276 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-	<head>
-        <script>
-            /*
-            Name:
-            Species:
-            Breed:
-            Second:
-            Sex:
-            Color:
-            Declaw:
-            SpayNeut:
-            Age:
-            Health:
-            Vacc:
-            Worm:
-            Chipped:
-            ID:
-            ChipID:
-            Suitability: [],
-            Foster:
-            */
 
-            const animals = [
-                {
-                    Name: "Benny",
-                    Species: "Dog",
-                    Breed: "Australian Shepherd Cross",
-                    Second: "",
-                    Sex: "Male",
-                    Color: "Brown / White",
-                    Declaw: false,
-                    SpayNeut: true,
-                    Age: "2Yrs 1Mths 4Wks",
-                    Health: true,
-                    Vacc: true,
-                    Worm: true,
-                    Chipped: true,
-                    ID: 23531,
-                    ChipID: 985113005872810,
-                    Suitability: ["Not Suitable for Children"],
-                    Foster: false,
-                },
-                {
-                    Name: "Cornelia",
-                    Species: "Dog",
-                    Breed: "Boxer Cross",
-                    Second: "",
-                    Sex: "Female",
-                    Color: "White",
-                    Declaw: false,
-                    SpayNeut: true,
-                    Age: "6Yrs 2Mths 3Wks",
-                    Health: true,
-                    Vacc: true,
-                    Worm: true,
-                    Chipped: true,
-                    ID: 23390,
-                    ChipID: 985113005872687,
-                    Suitability: ["OK with Dogs","Laid Back","Shy"],
-                    Foster: false,
-                },
-                {
-                    Name: "Hemingway",
-                    Species: "Cat",
-                    Breed: "Domestic Short Hair Cross",
-                    Second: "",
-                    Sex: "Male",
-                    Color: "Grey",
-                    Declaw: false,
-                    SpayNeut: true,
-                    Age: "3Yrs 3Wks",
-                    Health: true,
-                    Vacc: true,
-                    Worm: true,
-                    Chipped: false,
-                    ID: 23897,
-                    ChipID: 0,
-                    Suitability: ["Doesn't Like Cats", "Special Needs"],
-                    Foster: false,
-                },
-                {
-                    Name: "Howard",
-                    Species: "Cat",
-                    Breed: "Domestic Short Hair Cross",
-                    Second: "Russian",
-                    Sex: "Male",
-                    Color: "Grey",
-                    Declaw: false,
-                    SpayNeut: true,
-                    Age: "Adult",
-                    Health: true,
-                    Vacc: true,
-                    Worm: true,
-                    Chipped: true,
-                    ID: 23882,
-                    ChipID: 985113006299853,
-                    Suitability: [],
-                    Foster: false,
-                }
-            ]
-        </script>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<link rel="stylesheet" href=".css">
-	</head>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link href="style.css" rel="stylesheet" type="text/css">
+
+    <script src="getAllURLParams.js"></script>
+
+    <title>Kenton County Animal Shelter</title>
+</head>
+
+<body>
+    <header>
+        <div id="headerName"></div>
+    </header>
+    <main>
+        <div id="container"></div>
+    </main>
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+    <script>
+        /*
+        Name:
+        Species:
+        Breed:
+        Second:
+        Sex:
+        Color:
+        Declaw:
+        SpayNeut:
+        Age:
+        Health:
+        Vacc:
+        Worm:
+        Chipped:
+        ID:
+        ChipID:
+        Suitability: [],
+        Foster:
+        */
+
+        let animals = [
+            {
+                Name: 'Benny',
+                Picture: "img/Benny.jpg",
+                Species: 'Dog',
+                Breed: 'Australian Shepherd Cross',
+                Sex: 'Male',
+                Color: 'Brown / White',
+                Declaw: false,
+                SpayNeut: true,
+                Age: '2Yrs 1Mths 4Wks (approx)',
+                Health: true,
+                Vacc: true,
+                Worm: true,
+                Chipped: true,
+                ID: 23531,
+                ChipID: 985113005872810,
+                Suitability: ['Not Suitable for Children'],
+                About: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pretium ultrices ipsum sed blandit. Etiam blandit, ante et gravida ultricies, dolor tellus vulputate turpis, at semper massa magna sed nunc. Proin massa massa, finibus id nulla non, molestie porttitor magna. Phasellus sollicitudin lobortis elit, id bibendum ligula ornare vitae. Praesent nec fermentum ante. Vestibulum non tincidunt felis. Pellentesque lobortis urna ut lacus volutpat malesuada.',
+                Foster: false,
+            },
+            {
+                Name: 'Cornelia',
+                Picture: "img/Cornelia.jpg",
+                Species: 'Dog',
+                Breed: 'Boxer Cross',
+                Sex: 'Female',
+                Color: 'White',
+                Declaw: false,
+                SpayNeut: true,
+                Age: '6Yrs 2Mths 3Wks (approx)',
+                Health: true,
+                Vacc: true,
+                Worm: true,
+                Chipped: true,
+                ID: 23390,
+                ChipID: 985113005872687,
+                Suitability: ['OK with Dogs', 'Laid Back', 'Shy'],
+                About: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pretium ultrices ipsum sed blandit. Etiam blandit, ante et gravida ultricies, dolor tellus vulputate turpis, at semper massa magna sed nunc. Proin massa massa, finibus id nulla non, molestie porttitor magna. Phasellus sollicitudin lobortis elit, id bibendum ligula ornare vitae. Praesent nec fermentum ante. Vestibulum non tincidunt felis. Pellentesque lobortis urna ut lacus volutpat malesuada.',
+                Foster: false,
+            },
+            {
+                Name: 'Hemingway',
+                Picture: "img/Hemingway.jpg",
+                Species: 'Cat',
+                Breed: 'Domestic Shorthair Cross',
+                Sex: 'Male',
+                Color: 'Grey',
+                Declaw: false,
+                SpayNeut: true,
+                Age: '3Yrs 3Wks (approx)',
+                Health: true,
+                Vacc: true,
+                Worm: true,
+                Chipped: false,
+                ID: 23897,
+                ChipID: 0,
+                Suitability: ['Doesn\'t Like Cats', 'Special Needs'],
+                About: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pretium ultrices ipsum sed blandit. Etiam blandit, ante et gravida ultricies, dolor tellus vulputate turpis, at semper massa magna sed nunc. Proin massa massa, finibus id nulla non, molestie porttitor magna. Phasellus sollicitudin lobortis elit, id bibendum ligula ornare vitae. Praesent nec fermentum ante. Vestibulum non tincidunt felis. Pellentesque lobortis urna ut lacus volutpat malesuada.',
+                Foster: false,
+            },
+            {
+                Name: 'Howard',
+                Picture: "img/Howard.jpg",
+                Species: 'Cat',
+                Breed: 'Domestic Shorthair Cross',
+                Second: 'Russian',
+                Sex: 'Male',
+                Color: 'Grey',
+                Declaw: false,
+                SpayNeut: true,
+                Age: 'Adult',
+                Health: true,
+                Vacc: true,
+                Worm: true,
+                Chipped: true,
+                ID: 23882,
+                ChipID: 985113006299853,
+                Suitability: [],
+                About: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pretium ultrices ipsum sed blandit. Etiam blandit, ante et gravida ultricies, dolor tellus vulputate turpis, at semper massa magna sed nunc. Proin massa massa, finibus id nulla non, molestie porttitor magna. Phasellus sollicitudin lobortis elit, id bibendum ligula ornare vitae. Praesent nec fermentum ante. Vestibulum non tincidunt felis. Pellentesque lobortis urna ut lacus volutpat malesuada.',
+                Foster: false,
+            },
+            {
+                Name: 'Niko',
+                Picture: "img/Niko.webp",
+                Species: 'Cat',
+                Breed: 'Domestic Longhair Cross',
+                Sex: 'Male',
+                Color: 'Grey Tabby / White',
+                Declaw: false,
+                SpayNeut: true,
+                Age: '3Mths 3Wks',
+                Health: true,
+                Vacc: true,
+                Worm: true,
+                Chipped: true,
+                ID: 23541,
+                ChipID: 985113006299812,
+                Suitability: [],
+                About: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pretium ultrices ipsum sed blandit. Etiam blandit, ante et gravida ultricies, dolor tellus vulputate turpis, at semper massa magna sed nunc. Proin massa massa, finibus id nulla non, molestie porttitor magna. Phasellus sollicitudin lobortis elit, id bibendum ligula ornare vitae. Praesent nec fermentum ante. Vestibulum non tincidunt felis. Pellentesque lobortis urna ut lacus volutpat malesuada.',
+                Foster: true,
+            },
+            {
+                Name: 'Wishbone',
+                Picture: "img/Wishbone.jpg",
+                Species: 'Dog',
+                Breed: 'American Bulldog Cross',
+                Sex: 'Male',
+                Color: 'Black',
+                SpayNeut: true,
+                Age: '2Yrs 1Mths 2Wks (approx)',
+                Size: 'Large',
+                Health: true,
+                Vacc: true,
+                Worm: true,
+                Chipped: true,
+                ID: 20579,
+                ChipID: 985113004709947,
+                Suitability: [],
+                About: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pretium ultrices ipsum sed blandit. Etiam blandit, ante et gravida ultricies, dolor tellus vulputate turpis, at semper massa magna sed nunc. Proin massa massa, finibus id nulla non, molestie porttitor magna. Phasellus sollicitudin lobortis elit, id bibendum ligula ornare vitae. Praesent nec fermentum ante. Vestibulum non tincidunt felis. Pellentesque lobortis urna ut lacus volutpat malesuada.',
+                Foster: false,
+            }
+        ]
+        document.title = animals[getAllUrlParams().index].Name;
+        var headerName = document.getElementById('headerName');
+        var container = document.getElementById("container");
+        i = getAllUrlParams().index;
+        headerName.innerHTML += (
+            `
+            <span class="line">
+                <h2><span>${animals[i].Name}'s Profile</span></h2>
+            </span>
+            <div class="d-flex justify-content-center">
+                <div class="row">
+                    <h5 class="text-muted align-items-center">Animal ID: ${animals[i].ID} ` +
+            (animals[i].ChipID != 0 ? `&nbsp; Chip ID: ${animals[i].ChipID}` : `&nbsp; Not Microchipped`) + `
+                    </h5>
+                </div>
+            </div>
+            `
+        )
+
+        /*
+        Species
+        Breed
+        Color
+        Sex
+        Age
+        Neut/Spay
+        Declaw
+        */
+
+        container.innerHTML += (
+            `
+				<div class="container col-lg-10">
+                    <div class="row">
+                        <span class="col-lg-4 order-lg-last">
+                        <img src="${animals[i].Picture}" alt="${animals[i].Name}'s picture"
+								class="img-thumbnail img-fluid rounded float-right img-responsive" style="max-height: 250px;">
+                        </span>
+                        <span class="col-lg-8 details-info order-lg-first">
+                            <h3><b>Species:</b> ${animals[i].Species}</h3>
+                            <h3><b>Breed:</b> ${animals[i].Breed}</h3>
+                            <h3><b>Color:</b> ${animals[i].Color}</h3>
+                            <h3><b>Sex:</b> ${animals[i].Sex}</h3>
+                            <h3><b>Age:</b> ${animals[i].Age}</h3>
+                            <h3><b><u>Medical Information</u></b></h3>
+                            <ul class="details-list">
+                            <li>` + (animals[i].Sex == "Male" ? "He" : "She") + ` ` + (animals[i].SpayNeut == true ? (animals[i].Sex == "Male" ? "is neutered" : "is spayed") :
+                (animals[i].Sex == "Male" ? "is not neutered" : "is not spayed")) + `</li>
+                            ` +
+            (animals[i].Species == "Cat" ? (animals[i].Declaw == true ? `<li>` + (animals[i].Sex == "Male" ? "He" : "She") + ` ` + `is Declawed</li>` : `<li>` + (animals[i].Sex == "Male" ? "He" : "She") + ` ` + `is not Declawed</li>`) : "") +
+            `
+                                <li>` + (animals[i].Sex == "Male" ? "He" : "She") + ` ` + (animals[i].Health == true ? "has been checked" : "has not been checked") + `</li>
+                                <li>` + (animals[i].Sex == "Male" ? "He" : "She") + ` ` + (animals[i].Vacc == true ? "is vaccinated" : "is not vaccinated") + `</li>
+                                <li>` + (animals[i].Sex == "Male" ? "He" : "She") + ` ` + (animals[i].Worm == true ? "has updated worming" : "doesn't have updated worming") + `</li>
+                            </ul>
+                        </span>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h3><b><u>About ` + (animals[i].Sex == "Male" ? "him" : "her") + `</u></b></h3>
+                            <p class="details-paragraph">${animals[i].About}</p>
+                            <ul class="suitability-list" id="suitabilityList"></ul>
+                            <br>
+                            <h3><b><u>Where can you find ` + (animals[i].Sex == "Male" ? "him?" : "her?") + `</u></b></h3>
+                            ` + (animals[i].Sex == "Male" ? '<p class="details-paragraph">He' : '<p class="details-paragraph">She') + ` ` + (animals[i].Foster == true ? "is currently in foster care, please contact Kenton County Animal Shelter for more details</p>" : "is at the Kenton County Animal Shelter location</p>") + `
+                            <p class="details-paragraph">You can contact us by</p>
+                            <p class="details-paragraph"><b>Phone:</b> (859) 356-7400</p>
+                            <p class="details-paragraph">Or find us at:</p>
+                            <p class="details-paragraph"><b>Address:</b> 1020 Mary Laidley, Ft Mitchell, KY 41017</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center">
+                <div class="row">
+                    <h5 class="">
+                        <a href="index.html" class="btn btn-secondary">Back to Search</a>
+                    </h5>
+                </div>
+            </div>
+				`
+        )
+        for (var j = 0; j < animals[i].Suitability.length; j++) {
+            var suitabilityList = document.getElementById("suitabilityList");
+            suitabilityList.innerHTML += (
+                `
+                <li>` + animals[i].Suitability[j] + `</li>
+                `
+            )
+        }
+    </script>
+</body>
+
 </html>
