@@ -28,6 +28,33 @@ body {
     color: #000000;
 }
 
+.animals-loading-table {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin-bottom: 40px;
+}
+
+.animals-loading-table th{
+    text-decoration: underline;
+}
+
+.animals-loading-table th,td{
+    padding:10px;
+}
+
+.animals-loading-table a{
+    cursor: pointer;
+    color:#000000;
+    text-decoration: none;
+}
+
+.animals-loading-selected {
+    font-weight: bold;
+}
+
 .line {
     display: block;
     margin: 25px
